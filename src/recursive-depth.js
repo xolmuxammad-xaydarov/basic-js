@@ -12,16 +12,15 @@ const { NotImplementedError } = require('../extensions/index.js')
  * depthCalc.calculateDepth([[[]]]) => 3
  *
  */
-let count = 0
 class DepthCalculator {
   calculateDepth(arr) {
+    let count = 0
     if (Array.isArray(arr)) {
       count += 1
-      for (let i = 0; i < arr.length; i++) {
-          this.calculateDepth(arr[i])
-      }
+      return count += Math.max(0, ...arr.map(item => this.calculateDepth(item)))
+    }else{
+      return 0
     }
-    return count
   }
 }
 
