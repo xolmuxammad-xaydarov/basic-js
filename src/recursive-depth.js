@@ -17,10 +17,10 @@ class DepthCalculator {
     let count = 0
     if (Array.isArray(arr)) {
       count += 1
-      return count += Math.max(0, ...arr.map(item => this.calculateDepth(item)))
-    }else{
-      return 0
+      return (count += Math.max(0, ...arr.map((item) => this.calculateDepth(item))))
     }
+
+    return 0
   }
 }
 
